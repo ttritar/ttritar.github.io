@@ -21,15 +21,14 @@
       qrDiv.innerHTML = "";
 
       if (input.trim() !== "") {
-        QRCode.toCanvas(document.createElement("canvas"), input, function (error, canvas) {
-          if (error) {
-            console.error(error);
-          } else {
-            qrDiv.appendChild(canvas);
-          }
+        const canvas = document.createElement("canvas");
+        qrDiv.appendChild(canvas);
+        QRCode.toCanvas(canvas, input, function (error) {
+          if (error) console.error(error);
         });
       }
     }
   </script>
+
 </body>
 </html>
