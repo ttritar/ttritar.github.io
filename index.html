@@ -10,6 +10,7 @@
 
   <input type="text" id="linkInput" placeholder="Enter a link" style="width: 300px;">
   <button onclick="generateQR()">Generate QR</button>
+  <button onclick="clearInput()">Clear</button>
 
   <div id="qrcode" style="margin-top:20px;"></div>
 
@@ -30,6 +31,11 @@
           correctLevel : QRCode.CorrectLevel.H
         });
       }
+    }
+
+    function clearInput() {
+      document.getElementById("linkInput").value = ""; 
+      document.getElementById("qrcode").innerHTML = ""; 
     }
   </script>
 
